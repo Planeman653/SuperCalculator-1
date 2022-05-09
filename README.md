@@ -1,6 +1,6 @@
 # SuperCalculator
 
-A 'Cool' calculator, written in Python.
+A 'Super' calculator, written in Python.
 
 ## Requirements
 
