@@ -8,7 +8,7 @@ To install the requirements altogether, you can use this simple command:
 
 ```pip install -r requirements.txt```
 
-Note: You must cd the downloaded folder to run the requirements.txt file.
+Note: You must cd the Requirements folder to run the requirements.txt file.
 
 # Credits
 
