@@ -1,0 +1,4 @@
+# pip install requirements.txt
+colorama==0.4.4
+sympy==1.10.1
+numpy==1.22.3
