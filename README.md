@@ -8,8 +8,9 @@ To install the requirements altogether, you can use this simple command:
 
 ```pip install -r requirements.txt```
 
-## Disclaimer
+# Credits
 
-# YOU ARE NOT ALLOWED TO DISTRIBUTE A MODIFIED, PIRATED VERSION OF THIS PROGRAM, ANY OFFENDERS WILL BE TAKEN FURTHER TO COURT.
+Planeman653: https://github.com/Planeman653
+Myself included*
 
 Made with ❤️ in Australia.
