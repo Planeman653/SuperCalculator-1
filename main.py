@@ -12,8 +12,9 @@ import sympy as sym
 from fractions import Fraction
 sym.init_printing()
 
+
 def inputswitch():
-  print(Fore.YELLOW + "1 for Arithmetic | 2 for Algebra | 3 for Indices | 4 for Fraction, Decimal & Percentage Converter | 5 for HCF Calculator | 6 for LCM Calculator | 7 for Prime Number Checker | 8 for help")
+  print(Fore.YELLOW + "1 for Arithmetic | 2 for Algebra | 3 for Indices | 4 for Fraction, Decimal & Percentage Converter | 5 for HCF Calculator | 6 for LCM Calculator | 7 for Prime Number Checker | 8 for time converter | 9 for fraction simplifier | 10 for help")
   maininput = input(Fore.WHITE + "[>] ")
   if maininput == "1":
     maininput1()
@@ -31,11 +32,15 @@ def inputswitch():
     maininput7()
   elif maininput == "8":
     maininput8()
+  elif maininput == "9":
+    maininput9()
+  elif maininput == "10":
+    maininput10()
   else:
     print("Enter enter a number from 1-8")
     inputswitch()
 def helpinputswitch():
-  print("1 For Arithmetic Help | 2 For Algebraic Help | 3 For Indice Help | 4 for Fraction, Decimal And Percentage Converter | 5 For Main Menu")
+  print("1 For Arithmetic Help | 2 For Algebraic Help | 3 For Indice Help | 4 for Fraction, Decimal And Percentage Converter | 5 for HCF Calculator | 6 for LCM Calculator | 7 for Prime Number Checker | 8 for main menu")
   helpmaininput = input(Fore.WHITE + "[>] ")
   if helpmaininput == "1":
     helpmaininput1()
@@ -46,6 +51,12 @@ def helpinputswitch():
   elif helpmaininput == "4":
     helpmaininput4()
   elif helpmaininput == "5":
+    helpmaininput5()
+  elif helpmaininput == "6":
+    helpmaininput6()
+  elif helpmaininput == "7":
+    helpmaininput7()
+  elif helpmaininput == "8":
     mainmenu()
   else:
     print("Enter 1,2,3,4 or 5")
@@ -81,6 +92,7 @@ def mainmenu():
   print("\n")
   inputswitch()
 def maininput1():
+    valid = False
     clearConsole()
     print(Fore.RED + """
 ░█████╗░██████╗░██╗████████╗██╗░░██╗███╗░░░███╗███████╗████████╗██╗░█████╗░
@@ -93,14 +105,16 @@ def maininput1():
     print("\n")
     print(Fore.GREEN + "Welcome to the arithmetic calculator, please input a number.")
   
+
     num1 = float(input(Fore.WHITE + "[>] "))
   
     print(Fore.GREEN + "Please enter an operand.")
-  
+    
     operand = input(Fore.WHITE + "[>] ")
   
     print(Fore.GREEN + "Please enter the last number.")
-  
+
+
     num2 = float(input(Fore.WHITE + "[>] "))
   
     if operand == "+":
@@ -235,7 +249,7 @@ def maininput4():
     if totype == "1":
       print(Fraction(typevalue))
     elif totype == "2":
-      print(totype/100)
+      print(typevalue/100)
     elif totype == "3":
       print("Do not convert to the same value")
   
@@ -331,8 +345,90 @@ def maininput7():
     print(num, "is a prime number")
 
   inputswitch()
-  
+
 def maininput8():
+  clearConsole()
+  print(Fore.RED + """
+████████╗██╗███╗░░░███╗███████╗  ░█████╗░░█████╗░███╗░░██╗██╗░░░██╗███████╗██████╗░████████╗███████╗██████╗░
+╚══██╔══╝██║████╗░████║██╔════╝  ██╔══██╗██╔══██╗████╗░██║██║░░░██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+░░░██║░░░██║██╔████╔██║█████╗░░  ██║░░╚═╝██║░░██║██╔██╗██║╚██╗░██╔╝█████╗░░██████╔╝░░░██║░░░█████╗░░██████╔╝
+░░░██║░░░██║██║╚██╔╝██║██╔══╝░░  ██║░░██╗██║░░██║██║╚████║░╚████╔╝░██╔══╝░░██╔══██╗░░░██║░░░██╔══╝░░██╔══██╗
+░░░██║░░░██║██║░╚═╝░██║███████╗  ╚█████╔╝╚█████╔╝██║░╚███║░░╚██╔╝░░███████╗██║░░██║░░░██║░░░███████╗██║░░██║
+░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚════╝░░╚════╝░╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝""")
+  print("\n")
+  print(Fore.GREEN + "Welcome to the Time converter. Please enter the type of time you want to convert from. 1 for 12 hr time in AM | 2 for 12 hr time in PM | 3 for 24 hr time.")
+  fromtype = input(Fore.WHITE + "[>] ")
+  if fromtype == "1":
+    print(Fore.GREEN + "Please enter hours. Add 0's at the front if needed.")
+    hours = float(input(Fore.WHITE + "[>] "))
+    print(Fore.GREEN + "Please enter minutes")
+    minutes = float(input(Fore.WHITE + "[>] "))
+  if fromtype == "2":
+    print(Fore.GREEN + "Please enter hours. Add 0's at the front if needed.")
+    hours = float(input(Fore.WHITE + "[>] "))
+    print(Fore.GREEN + "Please enter minutes")
+    minutes = float(input(Fore.WHITE + "[>] "))
+  if fromtype == "3":
+    print(Fore.GREEN + "Enter the time")
+    typevalue = float(input(Fore.WHITE + "[>] "))
+
+  if fromtype == "1":
+    print((hours*100)+minutes)
+    
+  if fromtype == "2":
+    print(((hours+12)*100)+minutes)
+
+  if fromtype == "3":
+    if typevalue > 1200:
+      print((typevalue-1200)/100)
+      print("PM")
+    else: 
+      print(typevalue/100)
+      print("AM")
+  
+  inputswitch() 
+
+def maininput9():
+  clearConsole()
+  print(Fore.RED + """
+███████╗██████╗░░█████╗░░█████╗░████████╗██╗░█████╗░███╗░░██╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║
+█████╗░░██████╔╝███████║██║░░╚═╝░░░██║░░░██║██║░░██║██╔██╗██║
+██╔══╝░░██╔══██╗██╔══██║██║░░██╗░░░██║░░░██║██║░░██║██║╚████║
+██║░░░░░██║░░██║██║░░██║╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║
+╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝
+
+░██████╗██╗███╗░░░███╗██████╗░██╗░░░░░██╗███████╗██╗███████╗██████╗░
+██╔════╝██║████╗░████║██╔══██╗██║░░░░░██║██╔════╝██║██╔════╝██╔══██╗
+╚█████╗░██║██╔████╔██║██████╔╝██║░░░░░██║█████╗░░██║█████╗░░██████╔╝
+░╚═══██╗██║██║╚██╔╝██║██╔═══╝░██║░░░░░██║██╔══╝░░██║██╔══╝░░██╔══██╗
+██████╔╝██║██║░╚═╝░██║██║░░░░░███████╗██║██║░░░░░██║███████╗██║░░██║
+╚═════╝░╚═╝╚═╝░░░░░╚═╝╚═╝░░░░░╚══════╝╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝""")
+  print("\n")
+  print(Fore.GREEN + "Welcome to the Fraction Simplifiyer.")
+  print(Fore.GREEN + "Please enter numerator")
+  numerator = int(input(Fore.WHITE + "[>] "))
+  print(Fore.GREEN + "Please enter denominator")
+  denominator = int(input(Fore.WHITE + "[>] "))
+  def compute_hcf(x, y):
+
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if((x % i == 0) and (y % i == 0)):
+            hcf = i 
+    return hcf
+  hcf = compute_hcf(numerator, denominator)
+  numerator = numerator/hcf
+  denominator = denominator/hcf
+  print(numerator)
+  print("--------")
+  print(denominator)
+
+  inputswitch()
+def maininput10():
   
   clearConsole()
 
@@ -381,9 +477,23 @@ def helpmaininput3():
 
 def helpmaininput4():
   print(Fore.WHITE + "Follow all instructions on the converter to use it. Note - Do not use the % symbol.")
-
+  helpinputswitch()
+def helpmaininput5():
+  print(Fore.WHITE + "Enter 2 numbers.")
+  helpinputswitch()
+def helpmaininput6():
+  print(Fore.WHITE + "Enter 2 numbers.")
+  helpinputswitch()
+def helpmaininput7():
+  print(Fore.WHITE + "Enter only 1 number.")
   helpinputswitch()
 
-mainmenu()
-
 # End Of Code
+
+def helpmaininput8():
+  print(Fore.WHITE + "Remember to enter only valid times and without the colon for 24hr time.")
+  helpinputswitch()
+def helpmaininput9():
+  print(Fore.WHITE + "Remember to enter one number for the numerator and denominator.")
+  helpinputswitch()
+mainmenu()
